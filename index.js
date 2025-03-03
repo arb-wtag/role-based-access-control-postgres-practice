@@ -8,6 +8,11 @@ const app=express();
 
 app.use(express.json());
 
+app.use((req,res,next)=>{
+    console.log('logging request headers',req.headers);
+    next();
+});
+
 app.use('/api/auth',authRoutes);
 app.use('/api/users',userRoutes);
 
