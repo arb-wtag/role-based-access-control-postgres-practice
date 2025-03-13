@@ -16,6 +16,10 @@ app.use((req,res,next)=>{
 app.use('/api/auth',authRoutes);
 app.use('/api/users',userRoutes);
 
+app.get('/',(req,res)=>{
+    res.send("Hello World");
+});
+
 app.listen(port,()=>{
     console.log(`Server is running at port ${port}`);
 });
